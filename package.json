@@ -1,3 +1,38 @@
 {
-  "name": "toolkit"
+	"name": "toolkit",
+	"description": "A utility library.",
+	"version": "0.0.0",
+	"author": "ekim088 <edward@cyberbird.co>",
+	"type": "module",
+	"license": "MIT",
+	"main": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"scripts": {
+		"build": "rm -rf ./lib && tsc",
+		"format": "yarn exec prettier . --write",
+		"lint": "yarn lint:js && yarn lint:types",
+		"lint:js": "eslint . --fix",
+		"lint:types": "tsc --b",
+		"postinstall": "husky",
+		"prepack": "pinst --disable",
+		"postpack": "pinst --enable"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
+		"@eslint/js": "^9.27.0",
+		"eslint": "^9.27.0",
+		"eslint-plugin-jsdoc": "^50.6.17",
+		"globals": "^16.2.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.0.0",
+		"pinst": "^3.0.0",
+		"prettier": "3.5.3",
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.32.1"
+	},
+	"volta": {
+		"node": "22.16.0",
+		"yarn": "4.9.1"
+	}
 }
