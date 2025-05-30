@@ -1,0 +1,7 @@
+.*
+*.code-workspace
+/*.config.*
+/coverage/
+/src/
+/vitest.setup.js
+tsconfig.json

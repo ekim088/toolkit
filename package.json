@@ -1,7 +1,7 @@
 {
-	"name": "toolkit",
+	"name": "@ekim088/toolkit",
 	"description": "A simple utility library.",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"author": "ekim088 <edward@cyberbird.co>",
 	"type": "module",
 	"license": "MIT",
