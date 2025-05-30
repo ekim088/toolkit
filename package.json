@@ -1,6 +1,6 @@
 {
 	"name": "toolkit",
-	"description": "A utility library.",
+	"description": "A simple utility library.",
 	"version": "0.0.0",
 	"author": "ekim088 <edward@cyberbird.co>",
 	"type": "module",
@@ -14,6 +14,7 @@
 		"lint:js": "eslint . --fix",
 		"lint:types": "tsc --noEmit",
 		"test": "vitest",
+		"test:ci": "vitest run",
 		"test:coverage": "vitest run --coverage",
 		"test:pre-commit": "vitest related --run",
 		"postinstall": "husky",
