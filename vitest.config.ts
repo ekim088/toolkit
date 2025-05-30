@@ -8,5 +8,10 @@ export default defineConfig({
 		typecheck: {
 			tsconfig: './src/__tests__/tsconfig.json',
 		},
+		mockReset: true,
+		coverage: {
+			include: ['src'],
+			exclude: ['src/index.ts', 'src/typeUtils.ts'],
+		},
 	},
 });

@@ -6,18 +6,35 @@ import jsdoc from 'eslint-plugin-jsdoc';
 import vitest from '@vitest/eslint-plugin';
 
 export default defineConfig([
-	globalIgnores(['.yarn/*', '*.config.js']),
-	{
-		files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
-		plugins: { js },
-		extends: ['js/recommended'],
-	},
+	globalIgnores(['.yarn/*', 'lib/', '*.config.js']),
 	{
 		files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
 		languageOptions: { globals: globals.browser },
+		plugins: { js },
+		extends: ['js/recommended'],
 	},
 	tseslint.configs.recommended,
 	jsdoc.configs['flat/recommended'],
+	{
+		files: ['**/*.ts'],
+		rules: {
+			'@typescript-eslint/array-type': ['warn', { default: 'array' }],
+			'@typescript-eslint/consistent-type-imports': [
+				'warn',
+				{
+					fixStyle: 'inline-type-imports',
+					prefer: 'type-imports',
+				},
+			],
+			'@typescript-eslint/no-empty-object-type': [
+				'error',
+				{ allowObjectTypes: 'always' },
+			],
+			'@typescript-eslint/no-explicit-any': 'off',
+			'jsdoc/require-jsdoc': ['warn', { publicOnly: true }],
+			'prefer-spread': 'off',
+		},
+	},
 	{
 		files: ['**/*.test.*'],
 		plugins: { vitest },
