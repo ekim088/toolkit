@@ -1,21 +1,9 @@
-import clone from './clone';
-import isBoolean from './isBoolean';
-import isDeepEqual from './isDeepEqual';
-import isNumber from './isNumber';
-import isObject from './isObject';
-import isString from './isString';
-import memoizeOne from './memoizeOne';
-import merge from './merge';
-
-export default {
-	clone,
-	isBoolean,
-	isDeepEqual,
-	isNumber,
-	isObject,
-	isString,
-	memoizeOne,
-	merge,
-};
-
+export { default as clone } from './clone';
+export { default as isBoolean } from './isBoolean';
+export { default as isDeepEqual } from './isDeepEqual';
+export { default as isNumber } from './isNumber';
+export { default as isObject } from './isObject';
+export { default as isString } from './isString';
+export { default as memoizeOne } from './memoizeOne';
+export { default as merge } from './merge';
 export * from './typeUtils';
