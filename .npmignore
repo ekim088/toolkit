@@ -2,6 +2,7 @@
 *.code-workspace
 /*.config.*
 /coverage/
+/docs/
 /src/
 /vitest.setup.js
 tsconfig.json

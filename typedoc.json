@@ -1,0 +1,6 @@
+{
+	"formatWithPrettier": true,
+	"plugin": ["typedoc-plugin-markdown"],
+	"out": "./docs",
+	"readme": "none"
+}
