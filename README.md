@@ -1,6 +1,6 @@
 # toolkit
 
-A simple utility library. See [documentation](docs).
+A simple JavaScript utility library. See [documentation](docs).
 
 ## Installation
 
