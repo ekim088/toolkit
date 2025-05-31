@@ -8,7 +8,7 @@
 
 > **truthy**\<`TruthyValue`\>(`value`): `value is TruthyValue`
 
-Defined in: truthy.ts:12
+Defined in: [truthy.ts:12](https://github.com/ekim088/toolkit/blob/main/src/truthy.ts#L12)
 
 Tests if a value is truthy. Can be passed as the callback to an Array
 `filter()` method to correctly infer the type of the resulting array items.
