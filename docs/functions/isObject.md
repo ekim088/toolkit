@@ -8,7 +8,7 @@
 
 > **isObject**(`value`): `value is object`
 
-Defined in: [isObject.ts:7](https://github.com/ekim088/toolkit/blob/3865ce9c006f2b33f0fd65a427db970a598ee1af/src/isObject.ts#L7)
+Defined in: [isObject.ts:7](https://github.com/ekim088/toolkit/blob/main/src/isObject.ts#L7)
 
 Tests if a value is an object literal.
 

@@ -11,3 +11,4 @@ export {
 } from './memoizeOne';
 export { default as merge, type Merged } from './merge';
 export * from './typeUtils';
+export { default as uuid } from './uuid';

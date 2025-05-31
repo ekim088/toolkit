@@ -8,7 +8,7 @@
 
 > **merge**\<`T`\>(...`objects`): [`Merged`](../type-aliases/Merged.md)\<`T`\>
 
-Defined in: [merge.ts:16](https://github.com/ekim088/toolkit/blob/3865ce9c006f2b33f0fd65a427db970a598ee1af/src/merge.ts#L16)
+Defined in: [merge.ts:16](https://github.com/ekim088/toolkit/blob/main/src/merge.ts#L16)
 
 Deeply merges a list of objects into a single object. For duplicate
 properties, subsequent occurrences overwrite the previous.

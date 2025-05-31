@@ -8,7 +8,7 @@
 
 > **isDeepEqual**(`a`, `b`): `boolean`
 
-Defined in: [isDeepEqual.ts:10](https://github.com/ekim088/toolkit/blob/3865ce9c006f2b33f0fd65a427db970a598ee1af/src/isDeepEqual.ts#L10)
+Defined in: [isDeepEqual.ts:10](https://github.com/ekim088/toolkit/blob/main/src/isDeepEqual.ts#L10)
 
 Tests if two arguments are equal. Object literals and arrays are tested for
 deep equality while other objects are tested for strict equality.
