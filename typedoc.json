@@ -1,5 +1,6 @@
 {
 	"formatWithPrettier": true,
+	"gitRevision": "main",
 	"plugin": ["typedoc-plugin-markdown"],
 	"out": "./docs",
 	"readme": "none"

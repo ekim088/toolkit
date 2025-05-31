@@ -24,3 +24,4 @@
 - [isString](functions/isString.md)
 - [memoizeOne](functions/memoizeOne.md)
 - [merge](functions/merge.md)
+- [uuid](functions/uuid.md)

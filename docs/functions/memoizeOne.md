@@ -8,7 +8,7 @@
 
 > **memoizeOne**\<`T`\>(`fn`, `equalityFn?`): [`MemoizedFn`](../type-aliases/MemoizedFn.md)\<`T`\>
 
-Defined in: [memoizeOne.ts:31](https://github.com/ekim088/toolkit/blob/3865ce9c006f2b33f0fd65a427db970a598ee1af/src/memoizeOne.ts#L31)
+Defined in: [memoizeOne.ts:31](https://github.com/ekim088/toolkit/blob/main/src/memoizeOne.ts#L31)
 
 Returns a memoized function that caches the last result of a function call.
 The cached result is returned if the function arguments remain the same. Only

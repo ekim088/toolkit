@@ -8,7 +8,7 @@
 
 > **isNumber**(`value`): `value is number`
 
-Defined in: [isNumber.ts:6](https://github.com/ekim088/toolkit/blob/3865ce9c006f2b33f0fd65a427db970a598ee1af/src/isNumber.ts#L6)
+Defined in: [isNumber.ts:6](https://github.com/ekim088/toolkit/blob/main/src/isNumber.ts#L6)
 
 Tests if a value is a number datatype.
 
