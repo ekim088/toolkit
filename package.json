@@ -1,6 +1,6 @@
 {
 	"name": "@ekim088/toolkit",
-	"description": "A simple utility library.",
+	"description": "A simple JavaScript utility library.",
 	"version": "0.1.2",
 	"author": "ekim088 <edward@cyberbird.co>",
 	"type": "module",
