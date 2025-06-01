@@ -2,9 +2,11 @@ export { default as clone } from './clone';
 export * from './createObjectFactory';
 export { default as isBoolean } from './isBoolean';
 export { default as isDeepEqual } from './isDeepEqual';
+export * from './isNullish';
 export { default as isNumber } from './isNumber';
 export { default as isObject } from './isObject';
 export { default as isString } from './isString';
+export * from './isUndefined';
 export {
 	default as memoizeOne,
 	type MemoizedFn,
