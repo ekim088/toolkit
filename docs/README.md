@@ -8,10 +8,10 @@
 
 - [DeepWriteable](type-aliases/DeepWriteable.md)
 - [EqualityFn](type-aliases/EqualityFn.md)
-- [ItemType](type-aliases/ItemType.md)
 - [MemoizedFn](type-aliases/MemoizedFn.md)
 - [Merged](type-aliases/Merged.md)
 - [RecursivePartial](type-aliases/RecursivePartial.md)
+- [ValueOf](type-aliases/ValueOf.md)
 - [Writeable](type-aliases/Writeable.md)
 
 ## Functions
@@ -24,5 +24,6 @@
 - [isString](functions/isString.md)
 - [memoizeOne](functions/memoizeOne.md)
 - [merge](functions/merge.md)
+- [pick](functions/pick.md)
 - [truthy](functions/truthy.md)
 - [uuid](functions/uuid.md)

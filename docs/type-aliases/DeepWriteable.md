@@ -8,7 +8,7 @@
 
 > **DeepWriteable**\<`T`\> = `{ -readonly [P in keyof T]: DeepWriteable<T[P]> }`
 
-Defined in: [typeUtils.ts:23](https://github.com/ekim088/toolkit/blob/main/src/typeUtils.ts#L23)
+Defined in: [typeUtils.ts:27](https://github.com/ekim088/toolkit/blob/main/src/typeUtils.ts#L27)
 
 Makes a readonly object and all nested objects mutable.
 
