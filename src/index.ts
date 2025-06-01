@@ -10,6 +10,7 @@ export {
 	type EqualityFn,
 } from './memoizeOne';
 export { default as merge, type Merged } from './merge';
+export { default as pick } from './pick';
 export { default as truthy } from './truthy';
 export * from './typeUtils';
 export { default as uuid } from './uuid';
