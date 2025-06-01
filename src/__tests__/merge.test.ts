@@ -83,4 +83,24 @@ describe('merge', () => {
 			},
 		});
 	});
+
+	it('should not modify any inputs', () => {
+		const obj1 = { a: 1 };
+		const obj2 = { a: 1 };
+		const mergedObj = merge(obj1, obj2);
+
+		expect(mergedObj).not.toBe(obj1);
+		expect(mergedObj).not.toBe(obj2);
+		expect(obj1).toEqual({ a: 1 });
+		expect(obj2).toEqual({ a: 1 });
+
+		const arr1 = [1];
+		const arr2 = [1];
+		const mergedArr = merge(arr1, arr2);
+
+		expect(mergedArr).not.toBe(arr1);
+		expect(mergedArr).not.toBe(arr2);
+		expect(arr1).toEqual([1]);
+		expect(arr2).toEqual([1]);
+	});
 });

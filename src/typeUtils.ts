@@ -1,9 +1,4 @@
 /**
- * Derives the item type from an array.
- */
-export type ItemType<T> = T extends (infer U)[] ? U : never;
-
-/**
  * Declares an object and its nested objects as partials.
  */
 export type RecursivePartial<T> = {
@@ -11,6 +6,15 @@ export type RecursivePartial<T> = {
 		? RecursivePartial<T[P]>
 		: T[P];
 };
+
+/**
+ * Derives the item type from an array or object.
+ */
+export type ValueOf<T> = T extends (infer U)[]
+	? U
+	: T extends object
+		? T[keyof T]
+		: never;
 
 /**
  * Makes a readonly object mutable.
