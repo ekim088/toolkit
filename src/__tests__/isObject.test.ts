@@ -1,4 +1,4 @@
-import isObject from '../isObject';
+import { isObject } from '../isObject';
 
 describe('isObject', () => {
 	it.each([{}, { a: 0 }])('should return true for %o', value => {

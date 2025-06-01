@@ -1,4 +1,4 @@
-import isObject from './isObject';
+import { isObject } from './isObject';
 
 export type Merged<T extends object[]> = T extends [
 	infer FirstObj,
@@ -13,7 +13,7 @@ export type Merged<T extends object[]> = T extends [
  * @param {object[]} objects Any number of object literals to merge.
  * @returns {object} A new object with the properties of its source objects.
  */
-export default function merge<T extends object[]>(...objects: T): Merged<T> {
+export function merge<T extends object[]>(...objects: T): Merged<T> {
 	const mergedObj: any = {};
 
 	objects.forEach(obj => {

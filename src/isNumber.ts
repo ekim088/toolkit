@@ -3,6 +3,6 @@
  * @param {*} value The value to test.
  * @returns {boolean} `true` if the value is a number.
  */
-export default function isNumber(value: unknown): value is number {
+export function isNumber(value: unknown): value is number {
 	return typeof value === 'number';
 }

@@ -1,4 +1,4 @@
-import pick from '../pick';
+import { pick } from '../pick';
 
 describe('pick', () => {
 	it('should return an object containing only the properties that pass a test', () => {

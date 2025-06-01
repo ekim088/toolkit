@@ -1,4 +1,4 @@
-import isDeepEqual from './isDeepEqual';
+import { isDeepEqual } from './isDeepEqual';
 
 export type MemoizedFn<T extends (...args: any) => unknown> = T & {
 	/**
@@ -28,7 +28,7 @@ type MemoCache<T extends (...args: any) => unknown> = {
  *  if the equality function returns `true`.
  * @returns {Function} The memoized function.
  */
-export default function memoizeOne<T extends (...args: any) => unknown>(
+export function memoizeOne<T extends (...args: any) => unknown>(
 	fn: T,
 	equalityFn?: EqualityFn<T>
 ): MemoizedFn<T> {

@@ -4,6 +4,6 @@
  * @returns {boolean} `true` if the value is an object. Returns `false` for
  *  arrays and `null`.
  */
-export default function isObject(value: unknown): value is object {
+export function isObject(value: unknown): value is object {
 	return !!value && value.constructor === Object;
 }

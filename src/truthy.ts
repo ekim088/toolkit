@@ -9,7 +9,7 @@
  * @param {*} value The value to test.
  * @returns {boolean} `true` if the value is truthy.
  */
-export default function truthy<TruthyValue>(
+export function truthy<TruthyValue>(
 	value: TruthyValue | null | undefined | '' | 0 | false
 ): value is TruthyValue {
 	return !!value;

@@ -1,4 +1,4 @@
-import isNumber from '../isNumber';
+import { isNumber } from '../isNumber';
 
 describe('isNumber', () => {
 	it.each([0, 1, Infinity, NaN])('should return true for %d', value => {
