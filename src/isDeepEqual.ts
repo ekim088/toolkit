@@ -1,4 +1,4 @@
-import isObject from './isObject';
+import { isObject } from './isObject';
 
 /**
  * Tests if two arguments are equal. Object literals and arrays are tested for
@@ -7,7 +7,7 @@ import isObject from './isObject';
  * @param {*} b An argument to test.
  * @returns {boolean} `true` if `a` and `b` are deeply equal.
  */
-export default function isDeepEqual(a: unknown, b: unknown): boolean {
+export function isDeepEqual(a: unknown, b: unknown): boolean {
 	if (typeof a !== typeof b) {
 		return false;
 	}

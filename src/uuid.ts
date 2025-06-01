@@ -2,6 +2,6 @@
  * Generates a random UUID.
  * @returns {string} A UUID.
  */
-export default function uuid(): string {
+export function uuid(): string {
 	return crypto.randomUUID();
 }

@@ -1,4 +1,4 @@
-import clone from '../clone';
+import { clone } from '../clone';
 
 describe('clone', () => {
 	it('should clone an object', () => {

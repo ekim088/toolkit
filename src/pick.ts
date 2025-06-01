@@ -8,7 +8,7 @@ import { type ValueOf } from './typeUtils';
  * @returns {object} A new object containing only the properties that passed the
  * 	test.
  */
-export default function pick<T extends object>(
+export function pick<T extends object>(
 	obj: T,
 	predicate: (val: ValueOf<T>, key: keyof T) => boolean
 ): Partial<T> {

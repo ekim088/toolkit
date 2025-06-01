@@ -1,4 +1,4 @@
-import truthy from '../truthy';
+import { truthy } from '../truthy';
 
 describe('truthy', () => {
 	it.each(['str', 1, true, {}, []])('should return true for "%s"', value => {

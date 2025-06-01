@@ -1,4 +1,4 @@
-import isBoolean from '../isBoolean';
+import { isBoolean } from '../isBoolean';
 
 describe('isBoolean', () => {
 	it.each([true, false])('should return true for "%s"', value => {

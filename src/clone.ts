@@ -1,4 +1,4 @@
-import isObject from './isObject';
+import { isObject } from './isObject';
 
 function cloneObject<T extends object>(obj: T): T {
 	const clonedObj: Partial<T> = {};
@@ -17,7 +17,7 @@ function cloneObject<T extends object>(obj: T): T {
  * @param {*} value The value to clone.
  * @returns {*} A copy of the value.
  */
-export default function clone<T = unknown>(value: T): T {
+export function clone<T = unknown>(value: T): T {
 	if (Array.isArray(value)) {
 		return value.map(item => clone(item)) as T;
 	}

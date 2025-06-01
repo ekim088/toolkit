@@ -1,5 +1,5 @@
-import clone from './clone';
-import merge from './merge';
+import { clone } from './clone';
+import { merge } from './merge';
 import { type RecursivePartial } from './typeUtils';
 
 export type ObjectFactoryConfig = {

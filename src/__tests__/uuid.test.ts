@@ -1,5 +1,5 @@
-import isString from '../isString';
-import uuid from '../uuid';
+import { isString } from '../isString';
+import { uuid } from '../uuid';
 
 describe('uuid', () => {
 	it('should generate a UUID', () => {

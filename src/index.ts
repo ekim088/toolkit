@@ -1,19 +1,15 @@
-export { default as clone } from './clone';
+export * from './clone';
 export * from './createObjectFactory';
-export { default as isBoolean } from './isBoolean';
-export { default as isDeepEqual } from './isDeepEqual';
+export * from './isBoolean';
+export * from './isDeepEqual';
 export * from './isNullish';
-export { default as isNumber } from './isNumber';
-export { default as isObject } from './isObject';
-export { default as isString } from './isString';
+export * from './isNumber';
+export * from './isObject';
+export * from './isString';
 export * from './isUndefined';
-export {
-	default as memoizeOne,
-	type MemoizedFn,
-	type EqualityFn,
-} from './memoizeOne';
-export { default as merge, type Merged } from './merge';
-export { default as pick } from './pick';
-export { default as truthy } from './truthy';
+export * from './memoizeOne';
+export * from './merge';
+export * from './pick';
+export * from './truthy';
 export * from './typeUtils';
-export { default as uuid } from './uuid';
+export * from './uuid';
