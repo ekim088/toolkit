@@ -1,4 +1,5 @@
 export { default as clone } from './clone';
+export * from './createObjectFactory';
 export { default as isBoolean } from './isBoolean';
 export { default as isDeepEqual } from './isDeepEqual';
 export { default as isNumber } from './isNumber';

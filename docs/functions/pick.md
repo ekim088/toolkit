@@ -8,7 +8,7 @@
 
 > **pick**\<`T`\>(`obj`, `predicate`): `Partial`\<`T`\>
 
-Defined in: pick.ts:11
+Defined in: [pick.ts:11](https://github.com/ekim088/toolkit/blob/main/src/pick.ts#L11)
 
 Returns an object with only the properties that pass a given test.
 
