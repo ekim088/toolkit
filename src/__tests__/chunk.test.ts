@@ -44,13 +44,8 @@ describe('chunk', () => {
 		expect(items).toEqual(itemsCopy);
 	});
 
-	it('should throw an error for invalid chunk sizes', () => {
-		expect(() => {
-			chunk([1, 2], 0);
-		}).toThrowError('invalid chunk size 0');
-
-		expect(() => {
-			chunk([1, 2], -1);
-		}).toThrowError('invalid chunk size -1');
+	it('should return an empty array for chunk sizes <= 0', () => {
+		expect(chunk([1, 2], 0)).toEqual([]);
+		expect(chunk([1, 2], -1)).toEqual([]);
 	});
 });

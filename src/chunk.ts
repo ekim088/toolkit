@@ -9,7 +9,7 @@ export function chunk<T>(items: readonly T[], chunkSize: number): T[][] {
 	const result: T[][] = [];
 
 	if (chunkSize < 1) {
-		throw new Error(`invalid chunk size ${chunkSize}`);
+		return [];
 	}
 
 	for (let i = 0; i < items.length; i += chunkSize) {
