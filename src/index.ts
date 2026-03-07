@@ -1,3 +1,4 @@
+export * from './chunk';
 export * from './clone';
 export * from './createObjectFactory';
 export * from './isBoolean';
