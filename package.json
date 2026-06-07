@@ -7,8 +7,24 @@
 	"license": "MIT",
 	"main": "./lib/index.js",
 	"types": "./lib/@types/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./lib/@types/index.d.ts",
+			"import": "./lib/index.js"
+		},
+		"./*": {
+			"types": "./lib/@types/*.d.ts",
+			"import": "./lib/*.js"
+		}
+	},
+	"files": [
+		"lib"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
-		"build": "rm -rf ./lib && tsc & yarn docs",
+		"build": "rm -rf ./lib && tsc",
 		"docs": "typedoc",
 		"format": "yarn exec prettier . --write",
 		"lint": "yarn lint:js && yarn lint:types",
@@ -23,6 +39,7 @@
 		"postpack": "pinst --enable"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^2.31.0",
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
 		"@eslint/js": "^9.27.0",
