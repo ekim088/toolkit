@@ -1,0 +1,17 @@
+/**
+ * Shuffles the items in an array.
+ * @template T
+ * @param {T[]} array The array to shuffle.
+ * @returns {T[]} The chunked array.
+ */
+export function shuffle<T = unknown>(array: T[]): T[] {
+	const shuffled = array.slice();
+
+	for (let i = shuffled.length - 1; i > 0; i--) {
+		// pick a random number from 0 to i and swap the elements at the two indices
+		const j = Math.floor(Math.random() * (i + 1));
+		[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+	}
+
+	return shuffled;
+}

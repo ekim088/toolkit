@@ -31,5 +31,6 @@
 - [memoizeOne](functions/memoizeOne.md)
 - [merge](functions/merge.md)
 - [pick](functions/pick.md)
+- [shuffle](functions/shuffle.md)
 - [truthy](functions/truthy.md)
 - [uuid](functions/uuid.md)

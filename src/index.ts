@@ -11,6 +11,7 @@ export * from './isUndefined';
 export * from './memoizeOne';
 export * from './merge';
 export * from './pick';
+export * from './shuffle';
 export * from './truthy';
 export * from './typeUtils';
 export * from './uuid';
