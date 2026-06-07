@@ -18,6 +18,7 @@
 
 ## Functions
 
+- [chunk](functions/chunk.md)
 - [clone](functions/clone.md)
 - [createObjectFactory](functions/createObjectFactory.md)
 - [isBoolean](functions/isBoolean.md)
