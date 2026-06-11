@@ -1,4 +1,4 @@
-import { isUndefined } from '../isUndefined';
+import { isUndefined } from '../isUndefined.js';
 
 describe('isUndefined', () => {
 	it('should return true for undefined', () => {

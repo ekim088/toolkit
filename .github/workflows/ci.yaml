@@ -1,4 +1,4 @@
-name: Node.js CI
+name: CI
 
 on:
     push:
@@ -10,20 +10,22 @@ permissions:
     contents: read
 
 jobs:
-    build:
+    validate:
         runs-on: ubuntu-latest
 
         strategy:
             matrix:
-                node-version: [20.x, 22.x]
+                node-version: [22.x, 24.x, 26.x]
 
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v6
             - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v6
               with:
                   node-version: ${{ matrix.node-version }}
-            - run: yarn install
+            # install corepack since it's not bundled with Node.js 25+
+            - run: npm install -g corepack && corepack enable
+            - run: yarn install --immutable
             - run: yarn build
             - run: yarn lint
             - run: yarn test:ci

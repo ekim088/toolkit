@@ -1,4 +1,4 @@
-import { memoizeOne, type MemoizedFn } from '../memoizeOne';
+import { memoizeOne, type MemoizedFn } from '../memoizeOne.js';
 
 describe('memoizeOne', () => {
 	const fnSpy = vi.fn();

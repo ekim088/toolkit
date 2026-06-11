@@ -20,6 +20,10 @@
 	"files": [
 		"lib"
 	],
+	"sideEffects": false,
+	"engines": {
+		"node": ">=22"
+	},
 	"publishConfig": {
 		"access": "public"
 	},
@@ -35,15 +39,16 @@
 		"test:coverage": "vitest run --coverage",
 		"test:pre-commit": "vitest related --run",
 		"postinstall": "husky",
-		"prepack": "pinst --disable",
-		"postpack": "pinst --enable"
+		"prepack": "yarn pinst --disable",
+		"postpack": "yarn pinst --enable",
+		"release": "yarn build && yarn changeset publish"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.31.0",
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
 		"@eslint/js": "^9.27.0",
-		"@types/node": "^22.15.29",
+		"@types/node": "^24.0.0",
 		"@vitest/coverage-v8": "3.1.4",
 		"@vitest/eslint-plugin": "^1.2.1",
 		"eslint": "^9.27.0",
@@ -65,8 +70,9 @@
 		"type": "git",
 		"url": "git+https://github.com/ekim088/toolkit.git"
 	},
+	"packageManager": "yarn@4.9.1",
 	"volta": {
-		"node": "22.16.0",
+		"node": "24.16.0",
 		"yarn": "4.9.1"
 	}
 }

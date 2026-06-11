@@ -1,4 +1,4 @@
-import { chunk } from '../chunk';
+import { chunk } from '../chunk.js';
 
 describe('chunk', () => {
 	it('should chunk an array into sub-arrays of the specified size', () => {

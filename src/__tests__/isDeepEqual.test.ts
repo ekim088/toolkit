@@ -1,5 +1,5 @@
-import { clone } from '../clone';
-import { isDeepEqual } from '../isDeepEqual';
+import { clone } from '../clone.js';
+import { isDeepEqual } from '../isDeepEqual.js';
 
 describe('isDeepEqual', () => {
 	const mockDate = new Date();

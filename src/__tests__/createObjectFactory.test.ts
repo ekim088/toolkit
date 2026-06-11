@@ -1,4 +1,4 @@
-import { createObjectFactory } from '../createObjectFactory';
+import { createObjectFactory } from '../createObjectFactory.js';
 
 describe('createObjectFactory', () => {
 	type TestObject = {
