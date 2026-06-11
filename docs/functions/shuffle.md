@@ -8,7 +8,7 @@
 
 > **shuffle**\<`T`\>(`array`): `T`[]
 
-Defined in: shuffle.ts:7
+Defined in: [shuffle.ts:7](https://github.com/ekim088/toolkit/blob/main/src/shuffle.ts#L7)
 
 Shuffles the items in an array.
 

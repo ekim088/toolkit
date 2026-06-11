@@ -1,4 +1,4 @@
-import { type ValueOf } from './typeUtils';
+import { type ValueOf } from './typeUtils.js';
 
 /**
  * Returns an object with only the properties that pass a given test.

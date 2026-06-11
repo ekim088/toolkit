@@ -1,4 +1,4 @@
-import { isDeepEqual } from './isDeepEqual';
+import { isDeepEqual } from './isDeepEqual.js';
 
 export type MemoizedFn<T extends (...args: any) => unknown> = T & {
 	/**

@@ -1,4 +1,4 @@
-import { isNullish } from '../isNullish';
+import { isNullish } from '../isNullish.js';
 
 describe('isNullish', () => {
 	it.each([null, undefined])('should return true for "%s"', value => {

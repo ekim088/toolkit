@@ -1,4 +1,4 @@
-import { isObject } from './isObject';
+import { isObject } from './isObject.js';
 
 export type Merged<T extends object[]> = T extends [
 	infer FirstObj,

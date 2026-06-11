@@ -1,6 +1,6 @@
-import { clone } from './clone';
-import { merge } from './merge';
-import { type RecursivePartial } from './typeUtils';
+import { clone } from './clone.js';
+import { merge } from './merge.js';
+import { type RecursivePartial } from './typeUtils.js';
 
 export type ObjectFactoryConfig = {
 	/**

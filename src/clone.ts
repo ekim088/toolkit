@@ -1,4 +1,4 @@
-import { isObject } from './isObject';
+import { isObject } from './isObject.js';
 
 function cloneObject<T extends object>(obj: T): T {
 	const clonedObj: Partial<T> = {};

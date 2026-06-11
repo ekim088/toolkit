@@ -1,4 +1,4 @@
-import { isObject } from './isObject';
+import { isObject } from './isObject.js';
 
 /**
  * Tests if two arguments are equal. Object literals and arrays are tested for
