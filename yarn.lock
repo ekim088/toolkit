@@ -571,7 +571,7 @@ __metadata:
     "@vitest/eslint-plugin": "npm:^1.2.1"
     eslint: "npm:^9.27.0"
     eslint-plugin-jsdoc: "npm:^50.6.17"
-    global-jsdom: "npm:^26.0.0"
+    global-jsdom: "npm:^29.0.0"
     globals: "npm:^16.2.0"
     husky: "npm:^9.1.7"
     jsdom: "npm:^26.1.0"
@@ -2742,12 +2742,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"global-jsdom@npm:^26.0.0":
-  version: 26.0.0
-  resolution: "global-jsdom@npm:26.0.0"
+"global-jsdom@npm:^29.0.0":
+  version: 29.0.0
+  resolution: "global-jsdom@npm:29.0.0"
   peerDependencies:
-    jsdom: ">=26 <27"
-  checksum: 10c0/96b2069eb13e81d3cfe6049b4aabbf84839a171b695bec100cb770fb7196f957578e2068b10d9fd381a0db2a5ac22c37dd5c7a9cf29bd806e843e107b00fba36
+    jsdom: ">=29 <30"
+  checksum: 10c0/afc66cd3038211ca1e40cbb07218e084faf213a6bad4e70b9025137aeb9e7d8d52ad50a0632bdaaf3696b9a133a6ee62454a22a26ad951af740d0c61be467f31
   languageName: node
   linkType: hard
 
