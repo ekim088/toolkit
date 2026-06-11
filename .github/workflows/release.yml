@@ -1,68 +1,68 @@
 name: Release
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-    release:
-        runs-on: ubuntu-latest
+  release:
+    runs-on: ubuntu-latest
 
-        permissions:
-            contents: write
-            pull-requests: write
+    permissions:
+      contents: write
+      pull-requests: write
 
-        steps:
-            - name: Checkout Repo
-              uses: actions/checkout@v6
-              with:
-                  fetch-depth: 0
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
-            - name: Setup Node.js 24
-              uses: actions/setup-node@v6
-              with:
-                  node-version: 24
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
 
-            # Enable Corepack so the yarn version from packageManager is used
-            - name: Enable Corepack
-              run: corepack enable
+      # Enable Corepack so the yarn version from packageManager is used
+      - name: Enable Corepack
+        run: corepack enable
 
-            - name: Install Dependencies
-              run: yarn install --immutable
+      - name: Install Dependencies
+        run: yarn install --immutable
 
-            # Validate package output
-            - run: yarn lint
-            - run: yarn test:ci
+      # Validate package output
+      - run: yarn lint
+      - run: yarn test:ci
 
-            - name: Create Release Pull Request or Publish to npm
-              id: changesets
-              uses: changesets/action@v1
-              with:
-                  # Regenerate docs output so the release PR contains the latest docs
-                  version: yarn changeset version && yarn docs
-                  publish: yarn release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # Regenerate docs output so the release PR contains the latest docs
+          version: yarn changeset version && yarn docs
+          publish: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-            - name: Send Notification on Publish
-              if: steps.changesets.outputs.published == 'true'
-              run: |
-                  curl -H "Content-Type: application/json" \
-                       -X POST \
-                       -d '{
-                         "content": "<@${{ secrets.DISCORD_USER_ID }}>",
-                         "embeds": [{
-                           "title": "📦 Publish Successful",
-                           "description": "A new version of ${{ github.repository }} was published!",
-                           "color": 3066993,
-                           "fields": [
-                             { "name": "Repository", "value": "${{ github.repository }}", "inline": true },
-                             { "name": "Version", "value": "${{ fromJSON(steps.changesets.outputs.publishedPackages)[0].version }}", "inline": true }
-                           ]
-                         }]
-                       }' \
-                       ${{ secrets.DISCORD_WEBHOOK_URL }}
+      - name: Send Notification on Publish
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{
+                 "content": "<@${{ secrets.DISCORD_USER_ID }}>",
+                 "embeds": [{
+                   "title": "📦 Publish Successful",
+                   "description": "A new version of ${{ github.repository }} was published!",
+                   "color": 3066993,
+                   "fields": [
+                     { "name": "Repository", "value": "${{ github.repository }}", "inline": true },
+                     { "name": "Version", "value": "${{ fromJSON(steps.changesets.outputs.publishedPackages)[0].version }}", "inline": true }
+                   ]
+                 }]
+               }' \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
