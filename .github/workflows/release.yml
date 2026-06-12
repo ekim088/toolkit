@@ -14,6 +14,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      id-token: write # for npm OIDC trusted publishing
 
     steps:
       - name: Checkout Repo
@@ -37,16 +38,22 @@ jobs:
       - run: yarn lint
       - run: yarn test:ci
 
+      - name: Update npm for trusted publishing
+        run: npm install -g npm@latest
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
-          # Regenerate docs output so the release PR contains the latest docs
-          version: yarn changeset version && yarn docs
+          # Run custom version script that regenerates docs so the release PR
+          # contains the latest output
+          version: yarn changeset:version
           publish: yarn release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # Fine-grained PAT (not the default token) so the Version Packages
+          # PR triggers CI; generate at the following page if expired:
+          # GitHub profile → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token
+          GITHUB_TOKEN: ${{ secrets.CHANGESETS_PAT }}
 
       - name: Send Notification on Publish
         if: steps.changesets.outputs.published == 'true'
