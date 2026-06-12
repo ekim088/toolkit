@@ -3,8 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@ekim088/toolkit)](https://www.npmjs.com/package/@ekim088/toolkit)
 [![CI](https://github.com/ekim088/toolkit/actions/workflows/ci.yaml/badge.svg)](https://github.com/ekim088/toolkit/actions/workflows/ci.yaml)
 
-A simple JavaScript utility library, fully typed. See the
-[API documentation](https://ekim088.github.io/toolkit/).
+A simple JavaScript utility library. See the [API documentation](https://ekim088.github.io/toolkit/).
 
 ## Installation
 
