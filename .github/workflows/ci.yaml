@@ -10,7 +10,8 @@ permissions:
     contents: read
 
 jobs:
-    validate:
+    # validate the package builds successfully and all tests pass
+    build:
         runs-on: ubuntu-latest
 
         strategy:
@@ -29,3 +30,49 @@ jobs:
             - run: yarn build
             - run: yarn lint
             - run: yarn test:ci
+
+    # validate the package's exports can be successfully imported
+    package:
+        needs: build
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v6
+            - name: Use Node.js 24.x
+              uses: actions/setup-node@v6
+              with:
+                  node-version: 24.x
+            - run: npm install -g corepack && corepack enable
+            - run: yarn install --immutable
+            - run: yarn lint:package
+            - name: Validate import methods
+              run: |
+                  mkdir "$RUNNER_TEMP/consumer" && cd "$RUNNER_TEMP/consumer"
+                  npm init -y > /dev/null
+                  npm install "$GITHUB_WORKSPACE/package.tgz"
+                  node --input-type=module -e "import { chunk } from '@ekim088/toolkit'; if (typeof chunk !== 'function') throw new Error('barrel import failed');"
+                  node --input-type=module -e "import { chunk } from '@ekim088/toolkit/chunk'; if (typeof chunk !== 'function') throw new Error('subpath import failed');"
+
+    # Require that changes to src have an associated changeset. Add an empty one
+    # via `yarn changeset --empty` when no release is needed.
+    changeset:
+        if: github.event_name == 'pull_request'
+        runs-on: ubuntu-latest
+
+        permissions:
+            pull-requests: read
+
+        steps:
+            - uses: dorny/paths-filter@v4
+              id: changes
+              with:
+                  filters: |
+                      src:
+                          - 'src/**'
+                      changeset:
+                          - added: '.changeset/**'
+            - name: Require a changeset for src changes
+              if: steps.changes.outputs.src == 'true' && steps.changes.outputs.changeset == 'false'
+              run: |
+                  echo "::error::src changed but no changeset was added. Run 'yarn changeset', or 'yarn changeset --empty' if this change doesn't need a release."
+                  exit 1

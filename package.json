@@ -33,6 +33,7 @@
 		"format": "yarn exec prettier . --write",
 		"lint": "yarn lint:js && yarn lint:types",
 		"lint:js": "eslint . --fix",
+		"lint:package": "yarn build && yarn pack --out package.tgz && publint run package.tgz --strict && attw package.tgz --profile esm-only",
 		"lint:types": "tsc --noEmit",
 		"test": "vitest",
 		"test:ci": "vitest run",
@@ -41,9 +42,11 @@
 		"postinstall": "husky",
 		"prepack": "yarn pinst --disable",
 		"postpack": "yarn pinst --enable",
-		"release": "yarn build && yarn changeset publish"
+		"release": "yarn build && yarn changeset publish",
+		"changeset:version": "yarn changeset version && yarn docs"
 	},
 	"devDependencies": {
+		"@arethetypeswrong/cli": "^0.18.3",
 		"@changesets/cli": "^2.31.0",
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
@@ -60,6 +63,7 @@
 		"lint-staged": "^16.0.0",
 		"pinst": "^3.0.0",
 		"prettier": "3.5.3",
+		"publint": "^0.3.21",
 		"typedoc": "^0.28.5",
 		"typedoc-plugin-markdown": "^4.6.3",
 		"typescript": "^5.8.3",
