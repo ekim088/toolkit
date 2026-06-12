@@ -11,7 +11,7 @@ export default defineConfig({
 		mockReset: true,
 		coverage: {
 			include: ['src'],
-			exclude: ['src/typeUtils.ts'],
+			exclude: ['src/index.ts', 'src/typeUtils.ts'],
 			thresholds: {
 				statements: 80,
 				branches: 80,

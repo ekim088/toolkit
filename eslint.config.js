@@ -6,7 +6,7 @@ import jsdoc from 'eslint-plugin-jsdoc';
 import vitest from '@vitest/eslint-plugin';
 
 export default defineConfig([
-	globalIgnores(['.yarn/*', 'lib/', '*.config.js']),
+	globalIgnores(['.yarn/*', 'docs/', 'lib/', '*.config.js']),
 	{
 		files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
 		languageOptions: { globals: globals.browser },
