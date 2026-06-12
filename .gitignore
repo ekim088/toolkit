@@ -5,6 +5,7 @@
 !.yarn/sdks
 !.yarn/versions
 coverage/
+docs/
 lib/
 package.tgz
 

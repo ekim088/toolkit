@@ -1,6 +1,10 @@
 # toolkit
 
-A simple JavaScript utility library. See [documentation](docs).
+[![npm version](https://img.shields.io/npm/v/@ekim088/toolkit)](https://www.npmjs.com/package/@ekim088/toolkit)
+[![CI](https://github.com/ekim088/toolkit/actions/workflows/ci.yaml/badge.svg)](https://github.com/ekim088/toolkit/actions/workflows/ci.yaml)
+
+A simple JavaScript utility library, fully typed. See the
+[API documentation](https://ekim088.github.io/toolkit/).
 
 ## Installation
 
@@ -12,15 +16,15 @@ yarn add @ekim088/toolkit
 
 ## Usage
 
-This package supports for barrel and subpath imports:
+This package supports both barrel and subpath imports:
 
-```
+```js
 import { clone } from '@ekim088/toolkit';
 ```
 
 or
 
-```
+```js
 import { clone } from '@ekim088/toolkit/clone';
 ```
 
@@ -34,7 +38,7 @@ Releases are automated using [changesets](https://github.com/changesets/changese
    that impact the published package require a changeset.**
 2. When the PR merges to `main`, the Release workflow opens (or updates) a
    "Version Packages" PR that aggregates all pending changesets: it bumps the
-   version, updates `CHANGELOG.md`, and regenerates the typedoc output in
-   `docs/`.
-3. Merge the "Version Packages" PR to publish to npm. A Discord notification
-   confirms the publish.
+   version and updates `CHANGELOG.md`.
+3. Merge the "Version Packages" PR to publish to npm. A notification is send on
+   successful publish and the [docs site](https://ekim088.github.io/toolkit/)
+   is automatically re-deployed.
