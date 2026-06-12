@@ -16,14 +16,17 @@ jobs:
       pull-requests: write
       id-token: write # for npm OIDC trusted publishing
 
+    outputs:
+      published: ${{ steps.changesets.outputs.published }}
+
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           fetch-depth: 0
 
       - name: Setup Node.js 24
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: 24
 
@@ -56,11 +59,10 @@ jobs:
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
-        uses: changesets/action@v1
+        uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
         with:
-          # Run custom version script that regenerates docs so the release PR
-          # contains the latest output. Also apply derived commit message.
-          version: yarn changeset:version
+          # Apply derived commit message on release.
+          version: yarn changeset version
           publish: yarn release
           commit: ${{ steps.planned.outputs.message }}
           title: ${{ steps.planned.outputs.message }}
@@ -88,3 +90,13 @@ jobs:
                  }]
                }' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+  # Deploy docs to GitHub Pages after a successful publish.
+  docs:
+    needs: release
+    if: needs.release.outputs.published == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/docs.yml
