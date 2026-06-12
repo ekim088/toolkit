@@ -38,17 +38,32 @@ jobs:
       - run: yarn lint
       - run: yarn test:ci
 
-      - name: Update npm for trusted publishing
+      - name: Update npm for Trusted Publishing
         run: npm install -g npm@latest
+
+      # Derive commit message that satisfies commitlint and states planned version
+      - name: Derive Commit Message
+        id: planned
+        run: |
+          yarn changeset status --output=changeset-status.json || true
+          version=$(node -p "try { require('./changeset-status.json').releases[0].newVersion || '' } catch { '' }")
+          rm -f changeset-status.json
+          if [ -n "$version" ]; then
+            echo "message=chore: release v$version" >> "$GITHUB_OUTPUT"
+          else
+            echo "message=chore: version packages" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
           # Run custom version script that regenerates docs so the release PR
-          # contains the latest output
+          # contains the latest output. Also apply derived commit message.
           version: yarn changeset:version
           publish: yarn release
+          commit: ${{ steps.planned.outputs.message }}
+          title: ${{ steps.planned.outputs.message }}
         env:
           # Fine-grained PAT (not the default token) so the Version Packages
           # PR triggers CI; generate at the following page if expired:
