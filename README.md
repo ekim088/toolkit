@@ -14,6 +14,8 @@ Install via npm or yarn:
 yarn add @ekim088/toolkit
 ```
 
+This package is ESM-only and requires Node.js 22 or later.
+
 ## Usage
 
 This package supports both barrel and subpath imports:
@@ -39,6 +41,6 @@ Releases are automated using [changesets](https://github.com/changesets/changese
 2. When the PR merges to `main`, the Release workflow opens (or updates) a
    "Version Packages" PR that aggregates all pending changesets: it bumps the
    version and updates `CHANGELOG.md`.
-3. Merge the "Version Packages" PR to publish to npm. A notification is send on
+3. Merge the "Version Packages" PR to publish to npm. A notification is sent on
    successful publish and the [docs site](https://ekim088.github.io/toolkit/)
    is automatically re-deployed.
