@@ -1,5 +1,11 @@
 # @ekim088/toolkit
 
+## 0.4.2
+
+### Patch Changes
+
+- 02e3dfe: Updating README with contributing guidelines and license.
+
 ## 0.4.1
 
 ### Patch Changes
