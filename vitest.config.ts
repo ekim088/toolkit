@@ -10,7 +10,7 @@ export default defineConfig({
 		},
 		mockReset: true,
 		coverage: {
-			include: ['src'],
+			include: ['src/**/*.ts'],
 			exclude: ['src/index.ts', 'src/typeUtils.ts'],
 			thresholds: {
 				statements: 80,
