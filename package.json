@@ -72,7 +72,7 @@
 		"type": "git",
 		"url": "git+https://github.com/ekim088/toolkit.git"
 	},
-	"packageManager": "yarn@4.9.1",
+	"packageManager": "yarn@4.16.0",
 	"volta": {
 		"node": "24.16.0",
 		"yarn": "4.9.1"
