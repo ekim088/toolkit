@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Node.js 22+ and Yarn 4. Run `corepack enable` once to pick up the Yarn version
+Node.js 24+ and Yarn 4. Run `corepack enable` once to pick up the Yarn version
 pinned in `packageManager`, then install dependencies:
 
 ```sh

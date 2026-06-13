@@ -15,7 +15,7 @@ npm install @ekim088/toolkit
 yarn add @ekim088/toolkit
 ```
 
-This package is ESM-only and requires Node.js 22 or later.
+This package is ESM-only and requires Node.js 24 or later.
 
 ## Usage
 
