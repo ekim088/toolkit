@@ -12,7 +12,6 @@ export default defineConfig({
 		coverage: {
 			include: ['src/**/*.ts'],
 			exclude: ['src/index.ts', 'src/typeUtils.ts'],
-			excludeAfterRemap: true,
 			thresholds: {
 				statements: 80,
 				branches: 80,
