@@ -7,11 +7,15 @@ A simple JavaScript utility library. See the [API documentation](https://ekim088
 
 ## Installation
 
-Install via npm or yarn:
+Install via npm:
 
 ```sh
 npm install @ekim088/toolkit
-# or
+```
+
+or yarn:
+
+```sh
 yarn add @ekim088/toolkit
 ```
 

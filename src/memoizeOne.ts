@@ -22,11 +22,11 @@ type MemoCache<T extends (...args: any) => unknown> = {
  * Returns a memoized function that caches the last result of a function call.
  * The cached result is returned if the function arguments remain the same. Only
  * a single result is ever cached.
- * @param {Function} fn The function to memoize.
- * @param {Function} equalityFn A custom function to check equality between the
- *  current arguments and the cached arguments. Arguments are considered equal
- *  if the equality function returns `true`.
- * @returns {Function} The memoized function.
+ * @param fn The function to memoize.
+ * @param equalityFn A custom function to check equality between the current
+ * 	arguments and the cached arguments. Arguments are considered equal if the
+ * 	equality function returns `true`.
+ * @returns The memoized function.
  */
 export function memoizeOne<T extends (...args: any) => unknown>(
 	fn: T,

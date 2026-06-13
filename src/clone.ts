@@ -14,8 +14,8 @@ function cloneObject<T extends object>(obj: T): T {
 
 /**
  * Creates a deep copy of a value.
- * @param {*} value The value to clone.
- * @returns {*} A copy of the value.
+ * @param value The value to clone.
+ * @returns A copy of the value.
  */
 export function clone<T = unknown>(value: T): T {
 	if (Array.isArray(value)) {
