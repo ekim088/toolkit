@@ -2,7 +2,7 @@
  * Shuffles the items in an array.
  * @template T
  * @param array The array to shuffle.
- * @returns The chunked array.
+ * @returns The shuffled array.
  */
 export function shuffle<T = unknown>(array: T[]): T[] {
 	const shuffled = array.slice();

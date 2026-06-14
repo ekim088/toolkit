@@ -5,8 +5,7 @@ import { type ValueOf } from './typeUtils.js';
  * @param obj The object to parse.
  * @param predicate A test function called against each object property.
  * 	Properties that return a falsy result will not be included.
- * @returns A new object containing only the properties that passed the
- * 	test.
+ * @returns A new object containing only the properties that passed the test.
  */
 export function pick<T extends object>(
 	obj: T,
