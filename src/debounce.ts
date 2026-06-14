@@ -8,8 +8,10 @@ export type DebouncedFn<T extends (...args: any) => unknown> = ((
 
 	/**
 	 * Immediately invokes any pending call and cancels the timer.
+	 * @returns The return value of the pending call, or `undefined` if none
+	 * 	was pending.
 	 */
-	flush(): void;
+	flush(): ReturnType<T> | undefined;
 };
 
 /**
@@ -29,9 +31,13 @@ export function debounce<T extends (...args: any) => unknown>(
 	let pendingThis: ThisParameterType<T>;
 	let pendingArgs: Parameters<T> | null = null;
 
-	const invoke = () => {
-		fn.apply(pendingThis, pendingArgs as unknown as Parameters<T>);
+	const invoke = (): ReturnType<T> => {
+		const thisArg = pendingThis;
+		const args = pendingArgs as Parameters<T>;
+		pendingThis = undefined as ThisParameterType<T>;
 		pendingArgs = null;
+
+		return fn.apply(thisArg, args) as ReturnType<T>;
 	};
 
 	function debounced(this: ThisParameterType<T>, ...args: Parameters<T>) {
@@ -58,18 +64,17 @@ export function debounce<T extends (...args: any) => unknown>(
 			timer = null;
 		}
 
+		pendingThis = undefined as ThisParameterType<T>;
 		pendingArgs = null;
 	};
 
-	debounced.flush = () => {
+	debounced.flush = (): ReturnType<T> | undefined => {
 		if (timer !== null) {
 			clearTimeout(timer);
 			timer = null;
 		}
 
-		if (pendingArgs !== null) {
-			invoke();
-		}
+		return pendingArgs !== null ? invoke() : undefined;
 	};
 
 	return debounced as DebouncedFn<T>;

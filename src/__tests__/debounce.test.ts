@@ -76,6 +76,16 @@ describe('debounce', () => {
 			expect(mockDebouncedFn).toHaveBeenLastCalledWith('a');
 		});
 
+		it('should return the result of the flushed invocation', () => {
+			const summed = debounce((a: number, b: number) => a + b, 100);
+			summed(2, 3);
+			expect(summed.flush()).toBe(5);
+		});
+
+		it('should return undefined when no call is pending', () => {
+			expect(debounced.flush()).toBeUndefined();
+		});
+
 		it('should not invoke again after flushing', () => {
 			debounced();
 			debounced.flush();
