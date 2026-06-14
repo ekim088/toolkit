@@ -1,5 +1,16 @@
 # @ekim088/toolkit
 
+## 0.5.0
+
+### Minor Changes
+
+- ea826fa: Adding debounce utility.
+
+### Patch Changes
+
+- 5dcf0d9: Removing JSDoc type annotations in favor of TS types, and fixing an incorrect description.
+- 02e3dfe: Updating README with contributing guidelines and license.
+
 ## 0.4.1
 
 ### Patch Changes
