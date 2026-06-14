@@ -1,6 +1,7 @@
 export * from './chunk.js';
 export * from './clone.js';
 export * from './createObjectFactory.js';
+export * from './debounce.js';
 export * from './isBoolean.js';
 export * from './isDeepEqual.js';
 export * from './isNullish.js';
