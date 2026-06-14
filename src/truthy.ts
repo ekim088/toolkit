@@ -6,8 +6,8 @@
  * const truthyArr1: string[] = arr.filter(Boolean); // TS error
  * const truthyArr2: string[] = arr.filter(truthy); // no TS error
  * ```
- * @param {*} value The value to test.
- * @returns {boolean} `true` if the value is truthy.
+ * @param value The value to test.
+ * @returns `true` if the value is truthy.
  */
 export function truthy<TruthyValue>(
 	value: TruthyValue | null | undefined | '' | 0 | false

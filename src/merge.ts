@@ -10,8 +10,8 @@ export type Merged<T extends object[]> = T extends [
 /**
  * Deeply merges a list of objects into a single object. For duplicate
  * properties, subsequent occurrences overwrite the previous.
- * @param {object[]} objects Any number of object literals to merge.
- * @returns {object} A new object with the properties of its source objects.
+ * @param objects Any number of object literals to merge.
+ * @returns A new object with the properties of its source objects.
  */
 export function merge<T extends object[]>(...objects: T): Merged<T> {
 	const mergedObj: any = {};

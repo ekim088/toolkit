@@ -74,6 +74,7 @@ jobs:
 
       - name: Send Notification on Publish
         if: steps.changesets.outputs.published == 'true'
+        continue-on-error: true
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
@@ -81,11 +82,11 @@ jobs:
                  "content": "<@${{ secrets.DISCORD_USER_ID }}>",
                  "embeds": [{
                    "title": "📦 Publish Successful",
-                   "description": "A new version of ${{ github.repository }} was published!",
+                   "description": "A new version of `${{ github.repository }}` was published!",
                    "color": 3066993,
                    "fields": [
-                     { "name": "Repository", "value": "${{ github.repository }}", "inline": true },
-                     { "name": "Version", "value": "${{ fromJSON(steps.changesets.outputs.publishedPackages)[0].version }}", "inline": true }
+                     { "name": "Repository", "value": "`${{ github.repository }}`", "inline": true },
+                     { "name": "Version", "value": "`${{ fromJSON(steps.changesets.outputs.publishedPackages)[0].version }}`", "inline": true }
                    ]
                  }]
                }' \

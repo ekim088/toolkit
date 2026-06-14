@@ -16,10 +16,10 @@ export type ObjectFactoryFn<T extends object> = (
 
 /**
  * Creates a factory function that returns an object of a given type.
- * @param {object} defaultObj The default object to return when calling the
- * 	factory function.
- * @returns {Function} A factory function that returns a new object of a given
- * 	type. Accepts an object argument that shallowly overrides properties on the
+ * @param defaultObj The default object to return when calling the factory
+ * 	function.
+ * @returns A factory function that returns a new object of a given type.
+ * 	Accepts an object argument that shallowly overrides properties on the
  * 	default object.
  */
 export function createObjectFactory<T extends object>(
