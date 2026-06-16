@@ -29,7 +29,7 @@ describe('safeJsonParse', () => {
 	});
 
 	describe('parsing error', () => {
-		it('should return null when no fallback is provided', () => {
+		it('should return null when no fallback or callback is provided', () => {
 			expect(safeJsonParse('not json')).toBeNull();
 			expect(safeJsonParse('')).toBeNull();
 			expect(safeJsonParse('{ unterminated')).toBeNull();
@@ -44,6 +44,14 @@ describe('safeJsonParse', () => {
 			expect(safeJsonParse('oops', 0)).toBe(0);
 			expect(safeJsonParse('oops', '')).toBe('');
 			expect(safeJsonParse('oops', false)).toBe(false);
+		});
+
+		it('should return the result of the callback method when one is provided', () => {
+			const errorCallback = (jsonStr: string) =>
+				`${jsonStr}! all berries`;
+			expect(safeJsonParse('oops', errorCallback)).toBe(
+				'oops! all berries'
+			);
 		});
 	});
 });
