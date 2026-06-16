@@ -1,26 +1,15 @@
 import { safeJsonParse } from '../safeJsonParse.js';
 
 describe('safeJsonParse', () => {
-	it('should parse a JSON object', () => {
-		const obj = {
-			id: 1,
-			name: 'Ed',
-		};
-		expect(safeJsonParse(JSON.stringify(obj))).toEqual(obj);
-	});
-
-	it('should parse a JSON array', () => {
-		const arr = [1, 2, 3];
-		expect(safeJsonParse(JSON.stringify(arr))).toEqual(arr);
-	});
-
 	it.each([
+		['a JSON object', '{ "a": 1 }', { a: 1 }],
+		['a JSON array', '[1, 2, 3]', [1, 2, 3]],
 		['a string', '"hi"', 'hi'],
 		['a number', '42', 42],
 		['a boolean', 'true', true],
 		['null', 'null', null],
 	])('should parse %s', (_, input, expected) => {
-		expect(safeJsonParse(input)).toBe(expected);
+		expect(safeJsonParse(input)).toEqual(expected);
 	});
 
 	it('should ignore the fallback when parsing succeeds', () => {
