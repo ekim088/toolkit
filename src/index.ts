@@ -12,6 +12,7 @@ export * from './isUndefined.js';
 export * from './memoizeOne.js';
 export * from './merge.js';
 export * from './pick.js';
+export * from './safeJsonParse.js';
 export * from './shuffle.js';
 export * from './truthy.js';
 export * from './typeUtils.js';
