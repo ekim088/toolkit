@@ -4,6 +4,7 @@ export * from './createObjectFactory.js';
 export * from './debounce.js';
 export * from './isBoolean.js';
 export * from './isDeepEqual.js';
+export * from './isFunction.js';
 export * from './isNullish.js';
 export * from './isNumber.js';
 export * from './isObject.js';
