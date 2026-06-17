@@ -1,4 +1,5 @@
 /* eslint-disable jsdoc/check-param-names */
+import { isFunction } from './isFunction.js';
 
 /**
  * Safely parses a JSON string into a typed value. On parse error, returns the
@@ -22,7 +23,7 @@ export function safeJsonParse<T = unknown>(
 	try {
 		return JSON.parse(jsonStr) as T;
 	} catch {
-		if (fallbackOrCallback instanceof Function) {
+		if (isFunction(fallbackOrCallback)) {
 			return fallbackOrCallback(jsonStr);
 		}
 
