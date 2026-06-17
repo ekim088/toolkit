@@ -1,5 +1,12 @@
 # @ekim088/toolkit
 
+## 0.6.0
+
+### Minor Changes
+
+- 0b4dcc6: Adding `isFunction` utility.
+- 2ab19a7: Adding `safeJsonParse` utility.
+
 ## 0.5.0
 
 ### Minor Changes
